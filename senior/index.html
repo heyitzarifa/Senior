@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!--
+  ============================================================
+  TEACHERS' DAY MEMORY BOOK — For My Senior
+  ============================================================
+
+  HOW TO ADD YOUR CONTENT:
+
+  To add photos:
+     Place them inside:  assets/photos/
+     Then open script.js and update the memories array.
+     Supported formats: .jpg, .jpeg, .png, .webp
+
+  To add videos:
+     Place them inside:  assets/videos/
+     Then open script.js and update the videos array.
+     Supported formats: .mp4, .webm
+
+  To add background music:
+     Place your audio file as:  assets/music/background.mp3
+     The music button will appear in the bottom-left corner.
+     The user must click it manually to play.
+
+  To customize:
+     Edit the memories[] and videos[] arrays in script.js.
+     That is the only file you need to touch to add content.
+  ============================================================
+  -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="A personal digital memory book created for my teacher, my Senior, on Teachers Day." />
+  <title>Happy Teachers' Day, Senior</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=JetBrains+Mono:wght@300;400;500&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- LANDING / SPLASH SCREEN -->
+  <section id="landing" class="landing" role="banner" aria-label="Welcome screen">
+    <div class="code-symbols" aria-hidden="true">
+      <span class="symbol">&lt;html&gt;</span>
+      <span class="symbol">{ }</span>
+      <span class="symbol">;</span>
+      <span class="symbol">&lt;/&gt;</span>
+      <span class="symbol">function()</span>
+      <span class="symbol">&lt;div&gt;</span>
+      <span class="symbol">const</span>
+      <span class="symbol">.css</span>
+      <span class="symbol">=&gt;</span>
+      <span class="symbol">return</span>
+      <span class="symbol">&lt;/html&gt;</span>
+      <span class="symbol">[ ]</span>
+    </div>
+    <div class="particles" aria-hidden="true" id="particles"></div>
+    <div class="landing-content">
+      <p class="landing-tagline">For someone who taught us more than just code...</p>
+      <h1 class="landing-title">Happy Teachers' Day, Senior <span class="heart-icon">&#10084;&#65039;</span></h1>
+      <p class="landing-subtitle">Some people become part of our learning journey without even realizing how special
+        they become.</p>
+      <button class="landing-btn" id="openSurpriseBtn" aria-label="Open the surprise memory book">
+        <span>Open Your Surprise</span>
+        <span class="btn-arrow">&rarr;</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- MAIN WEBSITE -->
+  <div id="mainSite" class="main-site hidden" aria-hidden="true">
+
+    <!-- NAVIGATION -->
+    <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
+      <div class="nav-inner">
+        <a href="#hero" class="nav-logo" aria-label="Back to top">Senior &#10084;&#65039;</a>
+        <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links" id="navLinks" role="list">
+          <li><a href="#hero" class="nav-link">Home</a></li>
+          <li><a href="#timeline" class="nav-link">Journey</a></li>
+          <li><a href="#memories" class="nav-link">Memories</a></li>
+          <li><a href="#final" class="nav-link">Thank You</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section id="hero" class="section hero-section" aria-labelledby="hero-title">
+      <div class="hero-bg-glow" aria-hidden="true"></div>
+      <div class="container reveal">
+        <p class="section-eyebrow">A tribute with love and gratitude</p>
+        <h2 class="hero-title" id="hero-title">To Our Wonderful Teacher</h2>
+        <div class="hero-divider" aria-hidden="true"></div>
+        <p class="hero-tagline">To everyone, you are a teacher.<br />To me, you are someone a little more special
+          &mdash; my <em>Senior</em>.</p>
+        <p class="hero-body">You have been someone I have learned from, looked up to, and remembered for so many little
+          moments. Today is just a small way of saying thank you &mdash; for every class, every explanation, and every
+          time you made something complicated feel a little more possible.</p>
+      </div>
+    </section>
+
+    <!-- CODE CARDS SECTION -->
+    <section id="code-section" class="section code-section" aria-labelledby="code-title">
+      <div class="container">
+        <p class="section-eyebrow reveal">The Language of Learning</p>
+        <h2 class="section-title reveal" id="code-title">Written in Code, Remembered by Heart</h2>
+        <div class="code-cards-grid">
+
+          <article class="code-card reveal" aria-label="HTML lesson card">
+            <div class="code-window">
+              <div class="code-window-header" aria-hidden="true">
+                <span class="dot dot-red"></span>
+                <span class="dot dot-yellow"></span>
+                <span class="dot dot-green"></span>
+                <span class="code-lang-label">html</span>
+              </div>
+              <div class="code-window-body">
+                <div class="code-line"><span class="ln">1</span><span class="kw">&lt;lesson&gt;</span></div>
+                <div class="code-line"><span class="ln">2</span><span class="str">&nbsp;&nbsp;"Build things from
+                    nothing."</span></div>
+                <div class="code-line"><span class="ln">3</span><span class="kw">&lt;/lesson&gt;</span></div>
+                <div class="code-line"><span class="ln">4</span><span class="comment">&lt;!-- Structure your world
+                    --&gt;</span></div>
+                <div class="code-cursor" aria-hidden="true"></div>
+              </div>
+            </div>
+            <div class="code-card-footer">
+              <span class="code-tag">HTML</span>
+              <p class="code-lesson">You taught us how to <strong>build</strong>.</p>
+            </div>
+          </article>
+
+          <article class="code-card reveal" aria-label="CSS lesson card">
+            <div class="code-window">
+              <div class="code-window-header" aria-hidden="true">
+                <span class="dot dot-red"></span>
+                <span class="dot dot-yellow"></span>
+                <span class="dot dot-green"></span>
+                <span class="code-lang-label">css</span>
+              </div>
+              <div class="code-window-body">
+                <div class="code-line"><span class="ln">1</span><span class="selector">.lesson</span> {</div>
+                <div class="code-line"><span class="ln">2</span><span class="prop">&nbsp;&nbsp;beauty</span>: <span
+                    class="val">intentional</span>;</div>
+                <div class="code-line"><span class="ln">3</span><span class="prop">&nbsp;&nbsp;style</span>: <span
+                    class="val">yours</span>;</div>
+                <div class="code-line"><span class="ln">4</span>}</div>
+                <div class="code-cursor" aria-hidden="true"></div>
+              </div>
+            </div>
+            <div class="code-card-footer">
+              <span class="code-tag css-tag">CSS</span>
+              <p class="code-lesson">You taught us how to make things <strong>beautiful</strong>.</p>
+            </div>
+          </article>
+
+          <article class="code-card reveal" aria-label="JavaScript lesson card">
+            <div class="code-window">
+              <div class="code-window-header" aria-hidden="true">
+                <span class="dot dot-red"></span>
+                <span class="dot dot-yellow"></span>
+                <span class="dot dot-green"></span>
+                <span class="code-lang-label">js</span>
+              </div>
+              <div class="code-window-body">
+                <div class="code-line"><span class="ln">1</span><span class="kw">function</span> <span
+                    class="fn">teach</span>() {</div>
+                <div class="code-line"><span class="ln">2</span>&nbsp;&nbsp;<span class="kw">return</span> <span
+                    class="str">"make it work"</span>;</div>
+                <div class="code-line"><span class="ln">3</span>}</div>
+                <div class="code-line"><span class="ln">4</span><span class="comment">// logic + life</span></div>
+                <div class="code-cursor" aria-hidden="true"></div>
+              </div>
+            </div>
+            <div class="code-card-footer">
+              <span class="code-tag js-tag">JS</span>
+              <p class="code-lesson">You taught us how to make things <strong>work</strong>.</p>
+            </div>
+          </article>
+
+          <article class="code-card reveal" aria-label="Debugging lesson card">
+            <div class="code-window">
+              <div class="code-window-header" aria-hidden="true">
+                <span class="dot dot-red"></span>
+                <span class="dot dot-yellow"></span>
+                <span class="dot dot-green"></span>
+                <span class="code-lang-label">debug</span>
+              </div>
+              <div class="code-window-body">
+                <div class="code-line"><span class="ln">1</span><span class="comment">// Error? That is okay.</span>
+                </div>
+                <div class="code-line"><span class="ln">2</span><span class="kw">try</span> { <span
+                    class="str">again</span> }</div>
+                <div class="code-line"><span class="ln">3</span><span class="kw">catch</span> (fear) {</div>
+                <div class="code-line"><span class="ln">4</span>&nbsp;&nbsp;<span class="fn">learn</span>(fear);</div>
+                <div class="code-line"><span class="ln">5</span>}</div>
+                <div class="code-cursor" aria-hidden="true"></div>
+              </div>
+            </div>
+            <div class="code-card-footer">
+              <span class="code-tag debug-tag">DEBUG</span>
+              <p class="code-lesson">You taught us <strong>not to give up</strong> when things do not work.</p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- TIMELINE SECTION -->
+    <section id="timeline" class="section timeline-section" aria-labelledby="timeline-title">
+      <div class="container">
+        <p class="section-eyebrow reveal">A small journey</p>
+        <h2 class="section-title reveal" id="timeline-title">From Then to Now</h2>
+        <div class="timeline">
+
+          <div class="timeline-item reveal">
+            <div class="timeline-marker" aria-hidden="true">
+              <div class="timeline-dot"></div>
+            </div>
+            <div class="timeline-card">
+              <span class="timeline-label">Back Then</span>
+              <h3 class="timeline-heading">Where it began</h3>
+              <p class="timeline-text">You were someone I could learn from &mdash; a teacher whose classes made me want
+                to understand more, not just pass.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal">
+            <div class="timeline-marker" aria-hidden="true">
+              <div class="timeline-dot"></div>
+            </div>
+            <div class="timeline-card">
+              <span class="timeline-label">The Learning</span>
+              <h3 class="timeline-heading">More than a syllabus</h3>
+              <p class="timeline-text">Little by little, you taught me more than what was written in a syllabus. You
+                made the subject feel like something worth being curious about.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal">
+            <div class="timeline-marker" aria-hidden="true">
+              <div class="timeline-dot"></div>
+            </div>
+            <div class="timeline-card">
+              <span class="timeline-label">The Moments</span>
+              <h3 class="timeline-heading">Lessons beyond lessons</h3>
+              <p class="timeline-text">Some lessons stayed in notebooks. Some stayed in memories. The ones that stayed
+                in memories were always the most meaningful.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal">
+            <div class="timeline-marker" aria-hidden="true">
+              <div class="timeline-dot today-dot"></div>
+            </div>
+            <div class="timeline-card today-card">
+              <span class="timeline-label">Today</span>
+              <h3 class="timeline-heading">Teachers' Day &#10084;&#65039;</h3>
+              <p class="timeline-text">And today, I simply wanted to say thank you. Not because it is a special day, but
+                because it is a good reminder that some things deserve to be said out loud.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 4 INTERACTIVE MEMORY CARDS SECTION -->
+    <section id="memories" class="section memories-section" aria-labelledby="memories-title">
+      <div class="container">
+        <p class="section-eyebrow reveal">A Few Special Tokens</p>
+        <h2 class="section-title reveal" id="memories-title">Moments &amp; Words</h2>
+        <p class="section-subtitle reveal">Click each card to open something special saved just for you.</p>
+
+        <div class="memory-cards-grid">
+
+          <!-- 1. PHOTO MEMORY -->
+          <article class="memory-card reveal" id="photoCard" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Open photo: Our Memory">
+            <div class="card-glow" aria-hidden="true"></div>
+            <div class="card-top">
+              <span class="card-icon" aria-hidden="true">📸</span>
+              <span class="card-pill">Photo</span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Our Memory</h3>
+              <p class="card-subtitle">One little moment worth remembering.</p>
+            </div>
+            <div class="card-footer">
+              <span class="card-action-text">View Photo</span>
+              <span class="card-action-arrow" aria-hidden="true">&nearr;</span>
+            </div>
+          </article>
+
+          <!-- 2. VIDEO MEMORY -->
+          <article class="memory-card reveal" id="videoCard" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Open video: A Little Moment">
+            <div class="card-glow" aria-hidden="true"></div>
+            <div class="card-top">
+              <span class="card-icon" aria-hidden="true">🎥</span>
+              <span class="card-pill">Video</span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">A Little Moment</h3>
+              <p class="card-subtitle">Some memories are better watched than described.</p>
+            </div>
+            <div class="card-footer">
+              <span class="card-action-text">Watch Video</span>
+              <span class="card-action-arrow" aria-hidden="true">&nearr;</span>
+            </div>
+          </article>
+
+          <!-- 3. LETTER -->
+          <article class="memory-card reveal" id="letterCard" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Open letter: A Letter for You">
+            <div class="card-glow" aria-hidden="true"></div>
+            <div class="card-top">
+              <span class="card-icon" aria-hidden="true">💌</span>
+              <span class="card-pill">Letter</span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">A Letter for You</h3>
+              <p class="card-subtitle">There's something I wanted to tell you.</p>
+            </div>
+            <div class="card-footer">
+              <span class="card-action-text">Read Letter</span>
+              <span class="card-action-arrow" aria-hidden="true">&nearr;</span>
+            </div>
+          </article>
+
+          <!-- 4. FINAL THANK YOU -->
+          <article class="memory-card reveal" id="finalCard" tabindex="0" role="button" aria-label="Open finale: One Last Thing">
+            <div class="card-glow" aria-hidden="true"></div>
+            <div class="card-top">
+              <span class="card-icon" aria-hidden="true">❤️</span>
+              <span class="card-pill">Finale</span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">One Last Thing</h3>
+              <p class="card-subtitle">Before you leave...</p>
+            </div>
+            <div class="card-footer">
+              <span class="card-action-text">See Message</span>
+              <span class="card-action-arrow" aria-hidden="true">&nearr;</span>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- PHOTO LIGHTBOX -->
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer" style="display:none;">
+      <button class="lightbox-close" id="lightboxClose" aria-label="Close photo viewer">&#10005;</button>
+      <div class="lightbox-content">
+        <img id="lightboxImg" src="assets/photos/govardhan.jpeg" alt="Our Memory" class="lightbox-img" />
+        <div class="lightbox-caption">
+          <h3 id="lightboxTitle" class="lightbox-title">Our Memory</h3>
+          <p id="lightboxCaption" class="lightbox-desc">One little moment worth remembering.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- VIDEO MODAL -->
+    <div class="video-modal" id="videoModal" role="dialog" aria-modal="true" aria-label="Video player" style="display:none;">
+      <div class="video-modal-inner">
+        <button class="video-modal-close" id="videoModalClose" aria-label="Close video">&#10005;</button>
+        <video id="modalVideo" class="modal-video-player" controls preload="metadata">
+          <source src="assets/videos/govardhannn....mp4" type="video/mp4" />
+          Your browser does not support video playback.
+        </video>
+        <div class="video-modal-caption">
+          <h3 id="modalVideoTitle">A Little Moment</h3>
+          <p id="modalVideoCaption">Some memories are better watched than described.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- LETTER MODAL -->
+    <div class="letter-modal" id="letterModal" role="dialog" aria-modal="true" aria-label="A Letter for You" style="display:none;">
+      <div class="letter-modal-backdrop" id="letterModalBackdrop"></div>
+      <div class="letter-modal-dialog">
+        <button class="letter-modal-close" id="letterModalClose" aria-label="Close letter">&#10005;</button>
+        <div class="envelope-wrapper" id="envelopeWrapper">
+          <div class="envelope" id="envelope">
+            <div class="envelope-back"></div>
+            <div class="envelope-front">
+              <div class="envelope-flap" id="envelopeFlap" aria-hidden="true"></div>
+              <div class="envelope-body">
+                <div class="envelope-seal" aria-hidden="true">&#10084;&#65039;</div>
+              </div>
+            </div>
+            <p class="envelope-teaser">There is something I wanted to tell you...</p>
+            <button class="open-letter-btn" id="openLetterBtn" aria-label="Open and read the letter">Open the
+              Letter</button>
+          </div>
+          <div class="letter-paper" id="letterPaper" aria-live="polite" style="display:none;">
+            <div class="letter-paper-inner">
+              <div class="letter-header">
+                <p class="letter-date">Teachers' Day &#10084;&#65039;</p>
+              </div>
+              <div class="letter-body">
+                <p class="letter-salutation">Dear Senior,</p>
+                <p>You may simply be our teacher, but for me, you have always been someone I could learn from and look
+                  up to. The word "Senior" is what I call you &mdash; not just as a title, but as something that carries
+                  a lot of quiet respect and warmth.</p>
+                <p>From all the little things you have taught me to all the moments that became memories, I am genuinely
+                  grateful. You walked into our lives through HTML tags and CSS properties, and somehow left behind
+                  lessons that were never really about code at all.</p>
+                <p>You taught us coding &mdash; but somewhere along the way, your lessons became about much more than
+                  that. You taught us to try again when something does not work. To be patient while learning. To keep
+                  going even when things feel difficult. To not be afraid of making mistakes, because every error is
+                  just a step closer to the answer.</p>
+                <p>Maybe you will not remember every class or every conversation. Maybe some of those moments were just
+                  ordinary days for you. But I know I will remember many of those little moments &mdash; the
+                  explanations, the patience,and also the mokka jokes...😂 and the way you made complicated things feel
+                  approachable.</p>
+                <p>So on this Teachers' Day, I just wanted to say:</p>
+                <p class="letter-thankyou">Thank you for teaching.<br />Thank you for helping.<br />Thank you for being
+                  soooooooooooooooooo.....kindd🫠.<br />And thank you for being the kind of teacher whose lessons stay
+                  with us long after the class is over.</p>
+                <p class="letter-closing">Happy Teachers' Day, Senior. &#10084;&#65039;</p>
+                <p class="letter-signature">With lots of respect and luv <br /><em>Your junior </em></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FINAL MESSAGE SECTION -->
+    <section id="final" class="section final-section" aria-labelledby="final-title">
+      <div class="final-stars" aria-hidden="true" id="finalStars"></div>
+      <div class="container">
+        <div class="final-lines" id="finalLines" aria-live="polite">
+          <p class="final-line" data-delay="0">For every lesson.</p>
+          <p class="final-line" data-delay="400">For every correction.</p>
+          <p class="final-line" data-delay="800">For every "try again".</p>
+          <p class="final-line" data-delay="1200">For every little thing you taught us.</p>
+          <p class="final-line final-thanks" data-delay="2000" id="final-title">Thank you, Senior. <span
+              class="final-heart">&#10084;&#65039;</span></p>
+          <p class="final-line final-day" data-delay="2800">Happy Teachers' Day!</p>
+          <p class="final-line final-signature" data-delay="3600">&mdash; Your junior<span class="blinking-cursor"
+              aria-hidden="true">|</span></p>
+        </div>
+        <div class="easter-egg-area">
+          <button class="egg-heart" id="eggHeart" aria-label="Click me!" title="A little secret..."><span
+              class="egg-heart-icon">&#129293;</span></button>
+          <p class="egg-message" id="eggMessage" aria-live="polite" style="display:none;">Made with code, memories, and
+            a lot of gratitude. &#10084;&#65039;</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer" role="contentinfo">
+      <p class="footer-text">Made with <span class="footer-heart" aria-label="love">&#10084;&#65039;</span> for my
+        Senior. &nbsp;&middot;&nbsp; Happy Teachers' Day.</p>
+      <p class="footer-sub">Built with HTML, CSS &amp; JavaScript &mdash; the languages you taught me.</p>
+    </footer>
+
+  </div>
+
+  <!-- MUSIC PLAYER -->
+  <div class="music-player" id="musicPlayer" role="region" aria-label="Background music player" style="display:none;">
+    <audio id="bgAudio" preload="none" loop>
+      <source src="assets/music/background.mp3" type="audio/mpeg" />
+    </audio>
+    <button class="music-btn" id="musicBtn" aria-label="Play background music" aria-pressed="false">
+      <span class="music-icon" aria-hidden="true">&#9834;</span>
+      <span class="music-label">Music</span>
+    </button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
